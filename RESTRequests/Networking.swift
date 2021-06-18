@@ -7,13 +7,13 @@
 
 import Foundation
 
-//специально вынесены как глобальные переменны, но любые ссылки в запросы лучше вставлять как аргумент функции
+//специально вынесены как глобальные переменны, но любые ссылки в запросы лучше вставлять как аргумент функции. Тут так сделано чисто в образовательных целях
 let getURL = "https://jsonplaceholder.typicode.com/posts/1"
 let postURL = ""
 
 class URLNetworking {
     
-    static func getRequest (completion: @escaping (_ result: String)->()){
+    func getRequest (completion: @escaping (_ result: String)->()){
         guard let url = URL(string: getURL) else { return }
         
         let session = URLSession.shared

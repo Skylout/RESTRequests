@@ -14,6 +14,8 @@ class mainPageVC: UIViewController {
     @IBOutlet weak var postAlamofire: UIButton!
     @IBOutlet weak var getAlamofire: UIButton!
     
+    let urlNetworkingObj = URLNetworking()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         resultTextView.layer.borderWidth = 1.0
@@ -24,7 +26,22 @@ class mainPageVC: UIViewController {
         postAlamofire.layer.cornerRadius = 5.0
         getAlamofire.layer.cornerRadius = 5.0
     }
-
-
+    @IBAction func postRequestURL(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func getRequestURL(_ sender: UIButton) {
+        self.urlNetworkingObj.getRequest { result in
+            self.resultTextView.text = result
+        }
+    }
+    
+    @IBAction func postRequestAF(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func getRequestAF(_ sender: UIButton) {
+        
+    }
 }
 

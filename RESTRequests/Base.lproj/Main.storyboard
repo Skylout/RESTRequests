@@ -22,13 +22,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytz-03-FZ0">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytz-03-FZ0">
                                 <rect key="frame" x="60" y="200" width="294" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="RM9-wZ-n8D"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Результат запроса" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzY-u8-mJs">
@@ -51,6 +51,9 @@
                                         <state key="normal" title="GET(URLSession)">
                                             <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="getRequestURL:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k7i-Xa-QFw"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2v-ZO-ANq">
                                         <rect key="frame" x="201" y="20" width="125" height="40"/>
@@ -63,6 +66,9 @@
                                         <state key="normal" title="POST(Alamofire)">
                                             <color key="titleColor" systemColor="systemBackgroundColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="postRequestAF:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VCZ-zI-CWZ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLb-ae-FWU">
                                         <rect key="frame" x="201" y="76" width="125" height="40"/>
@@ -75,6 +81,9 @@
                                         <state key="normal" title="GET(Alamofire)">
                                             <color key="titleColor" systemColor="systemBackgroundColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="getRequestAF:" destination="BYZ-38-t0r" eventType="touchUpInside" id="izB-44-ESN"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8s-UL-4KA">
                                         <rect key="frame" x="8" y="20" width="125" height="40"/>
@@ -87,6 +96,9 @@
                                         <state key="normal" title="POST(URLSession)">
                                             <color key="titleColor" systemColor="systemBackgroundColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="postRequestURL:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qVg-Jf-ze0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>

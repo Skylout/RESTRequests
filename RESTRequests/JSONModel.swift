@@ -13,3 +13,10 @@ struct JsonGetModel: Codable {
     let title: String
     let body: String
 }
+
+struct JsonPostModel: Codable {
+    let postID: Int
+    let chars: String
+    let doom: String
+    
+}

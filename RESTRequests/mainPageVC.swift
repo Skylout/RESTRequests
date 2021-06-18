@@ -15,6 +15,7 @@ class mainPageVC: UIViewController {
     @IBOutlet weak var getAlamofire: UIButton!
     
     let urlNetworkingObj = URLNetworking()
+    let afNetworkingObj = AlamofireNetworking()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,9 @@ class mainPageVC: UIViewController {
         getAlamofire.layer.cornerRadius = 5.0
     }
     @IBAction func postRequestURL(_ sender: UIButton) {
-        
+        self.urlNetworkingObj.postRequest { result in
+            self.resultTextView.text = result
+        }
     }
     
     @IBAction func getRequestURL(_ sender: UIButton) {
@@ -37,11 +40,15 @@ class mainPageVC: UIViewController {
     }
     
     @IBAction func postRequestAF(_ sender: UIButton) {
-        
+        self.afNetworkingObj.postRequest { result in
+            self.resultTextView.text = result
+        }
     }
     
     @IBAction func getRequestAF(_ sender: UIButton) {
-        
+        self.afNetworkingObj.getRequest { result in
+            self.resultTextView.text = result
+        }
     }
 }
 

@@ -1,24 +1,154 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main PageVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="mainPageVC" customModule="RESTRequests" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REST-запросы" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nr0-6E-ubm">
+                                <rect key="frame" x="20" y="20" width="374" height="30"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytz-03-FZ0">
+                                <rect key="frame" x="60" y="200" width="294" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="RM9-wZ-n8D"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Результат запроса" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzY-u8-mJs">
+                                <rect key="frame" x="60" y="171.66666666666666" width="294" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XfR-Kv-QvB">
+                                <rect key="frame" x="40" y="424" width="334" height="136"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdA-53-heJ">
+                                        <rect key="frame" x="8" y="76" width="125" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="grd-ZV-VFR"/>
+                                            <constraint firstAttribute="width" constant="125" id="lfa-kH-xW2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="GET(URLSession)">
+                                            <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d2v-ZO-ANq">
+                                        <rect key="frame" x="201" y="20" width="125" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="2IL-4E-prf"/>
+                                            <constraint firstAttribute="width" constant="125" id="Nrh-IZ-0SW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="POST(Alamofire)">
+                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLb-ae-FWU">
+                                        <rect key="frame" x="201" y="76" width="125" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Ecg-Oi-npb"/>
+                                            <constraint firstAttribute="width" constant="125" id="ufV-o6-cpL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="GET(Alamofire)">
+                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8s-UL-4KA">
+                                        <rect key="frame" x="8" y="20" width="125" height="40"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="OqE-UG-DYx"/>
+                                            <constraint firstAttribute="width" constant="125" id="woo-aO-jZ1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="POST(URLSession)">
+                                            <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="C8s-UL-4KA" firstAttribute="top" secondItem="XfR-Kv-QvB" secondAttribute="top" constant="20" symbolic="YES" id="Cmx-tY-RfO"/>
+                                    <constraint firstAttribute="trailing" secondItem="rLb-ae-FWU" secondAttribute="trailing" constant="8" id="Dk3-wZ-nqo"/>
+                                    <constraint firstAttribute="bottom" secondItem="rLb-ae-FWU" secondAttribute="bottom" constant="20" symbolic="YES" id="EhO-Rb-wkF"/>
+                                    <constraint firstItem="TdA-53-heJ" firstAttribute="top" secondItem="C8s-UL-4KA" secondAttribute="bottom" constant="16" id="TQb-ez-tD6"/>
+                                    <constraint firstItem="d2v-ZO-ANq" firstAttribute="top" secondItem="XfR-Kv-QvB" secondAttribute="top" constant="20" symbolic="YES" id="c3C-eS-Ml2"/>
+                                    <constraint firstAttribute="bottom" secondItem="TdA-53-heJ" secondAttribute="bottom" constant="20" symbolic="YES" id="dbE-ab-zJN"/>
+                                    <constraint firstAttribute="trailing" secondItem="d2v-ZO-ANq" secondAttribute="trailing" constant="8" id="gye-pW-SVx"/>
+                                    <constraint firstItem="C8s-UL-4KA" firstAttribute="leading" secondItem="XfR-Kv-QvB" secondAttribute="leading" constant="8" id="l3O-EI-x6X"/>
+                                    <constraint firstItem="TdA-53-heJ" firstAttribute="leading" secondItem="XfR-Kv-QvB" secondAttribute="leading" constant="8" id="w1I-2A-mhF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XfR-Kv-QvB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="0MF-C9-Ady"/>
+                            <constraint firstItem="XfR-Kv-QvB" firstAttribute="top" secondItem="Ytz-03-FZ0" secondAttribute="bottom" constant="44" id="3QG-3D-dS7"/>
+                            <constraint firstItem="Ytz-03-FZ0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="922-pA-1ui"/>
+                            <constraint firstItem="TzY-u8-mJs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CUG-Sj-foV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XfR-Kv-QvB" secondAttribute="trailing" constant="40" id="KRM-uH-yMh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XfR-Kv-QvB" secondAttribute="bottom" priority="999" constant="150" id="MI0-LV-NGP"/>
+                            <constraint firstItem="Nr0-6E-ubm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nhg-5b-FKO"/>
+                            <constraint firstItem="Ytz-03-FZ0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="Ufk-pA-mV9"/>
+                            <constraint firstItem="Ytz-03-FZ0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="YHR-hd-8eT"/>
+                            <constraint firstItem="TzY-u8-mJs" firstAttribute="leading" secondItem="Ytz-03-FZ0" secondAttribute="leading" id="h7z-28-QEr"/>
+                            <constraint firstItem="Ytz-03-FZ0" firstAttribute="top" secondItem="TzY-u8-mJs" secondAttribute="bottom" constant="8" symbolic="YES" id="jze-Du-rz1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ytz-03-FZ0" secondAttribute="trailing" constant="60" id="k6D-d4-PwO"/>
+                            <constraint firstItem="Nr0-6E-ubm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="kT6-9y-cOL"/>
+                            <constraint firstItem="XfR-Kv-QvB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oSR-wh-7MS"/>
+                            <constraint firstItem="Nr0-6E-ubm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pu1-hw-8Br"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nr0-6E-ubm" secondAttribute="trailing" constant="20" id="yMV-cM-X6x"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="getAlamofire" destination="rLb-ae-FWU" id="Re9-SA-liQ"/>
+                        <outlet property="getURL" destination="TdA-53-heJ" id="RK3-e2-hPe"/>
+                        <outlet property="postAlamofire" destination="d2v-ZO-ANq" id="1ee-pl-8ii"/>
+                        <outlet property="postURL" destination="C8s-UL-4KA" id="DdT-sv-PzQ"/>
+                        <outlet property="resultTextView" destination="Ytz-03-FZ0" id="XEm-6W-i88"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="79.891304347826093"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
